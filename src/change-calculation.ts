@@ -46,17 +46,18 @@ class ChangeCalculationTest {
 
         console.log('CHANGE CALCULATION');
 
-        this.exec(5, 0.99);
-        this.exec(3, 1);
-        this.exec(10, 2.5);
+        this.exec(1, 5, 0.99);
+        this.exec(2, 3, 1);
+        this.exec(3, 10, 2.5);
 
     }
 
-    exec(M: number, P: number) {
+    exec(testNo: number, M: number, P: number) {
         const result = ChangeCalculation.getChange(M, P);
 
         console.log('');
-        console.log(M + ', ' + P);
+        
+        console.log(testNo + ': ' M + ', ' + P);
         console.log('');
         console.log('=>', result);
         console.log('');

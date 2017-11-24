@@ -1,5 +1,7 @@
 /*
     https://codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
+
+    Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
 */
 
 var A = [-10, -5, -3, -4, -5]; //3
