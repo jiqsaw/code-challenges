@@ -1,3 +1,7 @@
-import './change-calculation';
-import './collect-cards';
-import './tape_equilibrium';
+// import './change-calculation';
+// import './collect-cards';
+// import './cyclic-rotation';
+// import './frog-jmp';
+// import './perm-check';
+// import './perm-missing-elements';
+// import './tape_equilibrium';
