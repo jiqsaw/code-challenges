@@ -1,6 +1,6 @@
 /*
 
-    In a casino, all the playing cards got mixed up, and some of them got lost.
+    T: In a casino, all the playing cards got mixed up, and some of them got lost.
     You have to collect as many full decks as possible.
 
     You get N mixed up French playing cards as your input.

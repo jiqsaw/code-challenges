@@ -6,9 +6,10 @@
 // import './cyclic-rotation';
 // import './frog-jmp';
 // import './frog-river-one';
-import './find-word';
+// import './find-word';
 // import './max-counters';
 // import './max-slice-sum';
+import './minimum-hits';
 // import './missing-integer';
 // import './perm-check';
 // import './perm-missing-elements';
