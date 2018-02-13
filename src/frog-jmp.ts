@@ -12,7 +12,6 @@ class TimeComplexity2 {
         return Math.ceil((Y - X) / D);
     }
 
-
 }
 
 class TimeComplexity2Test {
