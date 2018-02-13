@@ -6,41 +6,24 @@
 
 */
 
-class Arrays2 {
+console.log('// CYCLIC ROTATION //');
 
-    static cyclicRotation(A: number[], K: number): number[] {
+function cyclicRotation(A: number[], K: number): number[] {
 
-        K = (A.length > K) ? K : K % A.length;
+    K = (A.length > K) ? K : K % A.length;
 
-        var d = A.slice(0, A.length - K);
-        var e = A.splice(A.length - K);
-        return e.concat(d);
-
-    }
+    var d = A.slice(0, A.length - K);
+    var e = A.splice(A.length - K);
+    return e.concat(d);
 
 }
 
+function cyclicRotationTest(A: number[], K: number) {
+    const result = cyclicRotation(A, K);
 
-class Arrays2Test {
-
-    constructor() {
-
-        console.log('// CYCLIC ROTATION //');
-
-        // TEST 1
-        this.exec([5, -1000], 1);
-
-    }
-
-    exec(A: number[],  K: number) {
-        const result = Arrays2.cyclicRotation(A, K);
-
-        console.log('');
-        console.log('=>', result);
-        console.log('');
-        console.log('--------------------------------------');
-        console.log('');
-    }
+    console.log('\n(', A, K, ')\n');
+    console.log('=>', result);
+    console.log('\n--------------------------------------\n');
 }
 
-new Arrays2Test();
+cyclicRotationTest([5, -1000], 1);

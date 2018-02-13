@@ -41,6 +41,8 @@ class DecimalRepresentationTest {
         const result = DecimalRepresentation.solution(A);
 
         console.log('');
+        console.log('(', A, ')');
+        console.log('');
         console.log('=>', result);
         console.log('');
         console.log('--------------------------------------');

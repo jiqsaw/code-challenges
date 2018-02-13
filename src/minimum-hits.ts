@@ -25,8 +25,8 @@ class MinimumHits {
 
         for (const i of A) {
 
-            let x = Math.sign(Number(i[0]));
-            let y = Math.sign(Number(i[1]));
+            let x = Number(i[0]) > 0 ? 1 : -1;
+            let y = Number(i[1]) > 0 ? 1 : -1;
 
             if (x === -1 && y === -1) {
                 if (!this.checkPath(LB, i)) {
