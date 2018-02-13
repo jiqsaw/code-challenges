@@ -6,7 +6,7 @@
 
 */
 
-class CountintElements2 {
+class CountintElements3 {
 
     static missingInteger(A: number[]): number {
 
@@ -22,34 +22,12 @@ class CountintElements2 {
 
         return missing;
 
-        // // A = A.sort((a, b) => a - b);
-        
-        // A = A.filter((el, i, a) => i === a.indexOf(el));
-        // console.log(A)
-        // for (let index = 0; index < A.length; index++) {
-        //     if (A[index] > 0 && (A[index + 1] > A[index] + 1)) {
-        //         return A[index] + 1;
-        //     }
-        // }
-
-
-
-        // // if (A.length < 1) return 1;
-
-        // // for (let index = 0; index < A.length; index++) {
-        // //     if (A[index] > index + 1) {
-        // //         return index + 1;
-        // //     }
-        // // }
-
-        // return A.length > 0 ? A[A.length - 1] + 1 : 1;
-
     }
 
 
 }
 
-class CountintElements2Test {
+class CountintElements3Test {
 
     constructor() {
 
@@ -69,7 +47,7 @@ class CountintElements2Test {
     }
 
     exec(A: number[]) {
-        const result = CountintElements2.missingInteger(A);
+        const result = CountintElements3.missingInteger(A);
 
         console.log('');
         console.log('=>', result);
@@ -80,4 +58,4 @@ class CountintElements2Test {
 
 }
 
-new CountintElements2Test();
+new CountintElements3Test();
