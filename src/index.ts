@@ -13,10 +13,10 @@ console.log('\n\n\n\n\n\n\n\n\n');
 // import './max-counters';
 // import './max-slice-sum';
 // import './minimum-hits';
-// import './missing-integer';
+import './missing-integer';
 // import './perm-check';
 // import './perm-missing-elements';
-import './reordering-groups';
+// import './reordering-groups';
 // import './tape_equilibrium';
 
 console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n');
