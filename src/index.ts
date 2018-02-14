@@ -1,4 +1,5 @@
-console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n');
+console.log('\n\n\n\n\n\n\n\n\n');
+
 // import './binary-gap';
 // import './brackets';
 // import './distinct';
@@ -17,3 +18,5 @@ console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n');
 // import './perm-missing-elements';
 import './reordering-groups';
 // import './tape_equilibrium';
+
+console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n');

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "play": "ts-node ./src/index.ts && tsc"
+    "play": "clear && ts-node ./src/index.ts && tsc"
   },
   "author": "burak ucakan",
   "license": "ISC"
