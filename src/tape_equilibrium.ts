@@ -4,8 +4,6 @@
     Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
 */
 
-
-
 class TimeComplexity {
 
     static tapeEquilibrium(A: any): number {
