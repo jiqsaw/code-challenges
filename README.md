@@ -26,13 +26,13 @@ It may simply be changed to `ES6`.
 
 
 ## websites
-projecteuler.net
-hackerrank.com
-leetcode.com
-codility.com
-coderbyte.com
-codechef.com
-codeeval.com
-spoj.com
-codingame.com
-codewars.com
+[projecteuler.net](http://projecteuler.net)
+[hackerrank.com](http://hackerrank.com)
+[leetcode.com](http://leetcode.com)
+[codility.com](http://codility.com)
+[coderbyte.com](http://coderbyte.com)
+[codechef.com](http://codechef.com)
+[codeeval.com](http://codeeval.com)
+[spoj.com](http://spoj.com)
+[codingame.com](http://codingame.com)
+[codewars.com](http://codewars.com)
