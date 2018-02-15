@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "play": "clear && ts-node ./src/index.ts && tsc"
+    "play": "clear && ts-node ./src/index.ts && tsc",
+    "init": "npm install -g nodemon && npm install -g ts-node"
   },
   "author": "burak ucakan",
   "license": "ISC"
