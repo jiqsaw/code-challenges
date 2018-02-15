@@ -30,9 +30,16 @@ function maxCounters(N: number, A: number[]) {
 
         if (element < threshold) {
 
-            if (counter[element - 1] < lastMax) { counter[element - 1] = lastMax; }
-            counter[element - 1]++;
-            if (counter[element - 1] > currMax) { currMax = counter[element - 1] };
+            if (counter[element - 1] < lastMax) {
+                counter[element - 1] = lastMax + 1;
+            }
+            else {
+                counter[element - 1]++;
+            }
+
+            if (counter[element - 1] > currMax) {
+                currMax = counter[element - 1];
+            }
 
         } else {
             lastMax = currMax;
