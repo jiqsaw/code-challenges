@@ -24,21 +24,8 @@ function passingCars(A: number[]): number {
             counter += zeroCount
             if (counter > 1000000000) { return -1; }
         }
+
         i++;
-
-        // SOLUTION FASTER (100%)
-        // if (A[i] === 0) {
-        //     zeroCount++;
-        //     i++;
-        // } else {
-
-        //     let next = A.indexOf(0, i) == -1 ? A.length : A.indexOf(0, i);
-
-        //     counter += zeroCount * (next - i)
-
-        //     if (next >= A.length - 1) break;
-        //     else i = next;
-        // }
     }
 
     return counter;

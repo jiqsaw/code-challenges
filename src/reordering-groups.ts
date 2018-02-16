@@ -18,16 +18,25 @@ function reOrderingGroup(A: number[]): number {
     let B: number[][] = [];
 
     let filtered: number[] = [];
+    let len = A.length;
 
-    for (let index = 0; index < A.length; index++) {
+    for (let i = 0; i < len; i++) {
 
-        if ((index > 0) && (A[index - 1] - 1 !== A[index])) {
-            B.push(filtered);
-            filtered = [];
+        if ((i > 0) && (A[i - 1] - 1 !== A[i])) {
+
+            let minC = Math.min(...A.slice(i));
+            let maxB = Math.max(...A.slice(0, i));
+
+            if (minC > maxB) {
+                B.push(filtered);
+                filtered = [];
+            }
+
         }
-        filtered.push(A[index]);
+        filtered.push(A[i]);
+
     }
-    
+
     B.push(filtered);
     return B.length;
 }
