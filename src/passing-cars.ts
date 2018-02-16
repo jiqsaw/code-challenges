@@ -9,35 +9,58 @@
 
 console.log('// PASSING CARS //');
 
-function passingCar(A: number[]): number {
+function passingCars(A: number[]): number {
 
-    let list = [];
-    let i = 0;
-    while (i < A.length) {
-        
-        let j = i;
-        while (j < A.length) {
-        
-            if (A[j]) {
-                list.push([A, j])
-            }
-            
-            j++;
+    let counter = 0;
+    let zeroCount = 0;
+    let len = A.length;
+
+    let i = A.indexOf(0);
+    while (i < len) {
+
+        if (A[i] === 0) {
+            zeroCount++;
+        } else {
+            counter += zeroCount
+            if (counter > 1000000000) { return -1; }
         }
-        
         i++;
+
+        // SOLUTION FASTER (100%)
+        // if (A[i] === 0) {
+        //     zeroCount++;
+        //     i++;
+        // } else {
+
+        //     let next = A.indexOf(0, i) == -1 ? A.length : A.indexOf(0, i);
+
+        //     counter += zeroCount * (next - i)
+
+        //     if (next >= A.length - 1) break;
+        //     else i = next;
+        // }
     }
-    
-    return A.length;
+
+    return counter;
 
 }
 
 
-function passingCarTest(A: number[]) {
+function passingCarsTest(A: number[]) {
     console.log('\n(', A, ')\n');
-    console.log('\n=>', passingCar(A));
+    console.log('\n=>', passingCars(A));
     console.log('\n--------------------------------------\n');
 }
 
 
-passingCarTest([0, 1, 0, 1, 1]);
+passingCarsTest([0, 1, 0, 1, 1]);
+// 5
+
+passingCarsTest([0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1]);
+// 22
+
+passingCarsTest([1]);
+// 0
+
+passingCarsTest([1, 1]);
+// 0
