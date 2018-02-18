@@ -9,14 +9,29 @@
 class Sorting {
 
     static distinct(A: number[]) {
-        
-        let B = [];
-        for (var key in A) {
-            let element = A[key];
-            if (B.indexOf(element) === -1)
-                B.push(element);
+
+        // return A.filter((e, i) => i === A.indexOf(e)).length;
+
+        var seen: any = {};
+        var count = 0;
+        var len = A.length;
+        var j = 0;
+        for (var i = 0; i < len; i++) {
+            var item = A[i];
+            if (seen[item] !== 1) {
+                seen[item] = 1;
+                count++
+            }
         }
-        return B.length;
+        return count;
+
+        // let B = [];
+        // for (var key in A) {
+        //     let element = A[key];
+        //     if (B.indexOf(element) === -1)
+        //         B.push(element);
+        // }
+        // return B.length;
 
     }
 
