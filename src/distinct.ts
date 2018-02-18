@@ -12,10 +12,9 @@ class Sorting {
 
         // return A.filter((e, i) => i === A.indexOf(e)).length;
 
-        var seen: any = {};
+        var seen = [];
         var count = 0;
         var len = A.length;
-        var j = 0;
         for (var i = 0; i < len; i++) {
             var item = A[i];
             if (seen[item] !== 1) {
