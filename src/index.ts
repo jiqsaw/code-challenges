@@ -1,7 +1,7 @@
 console.log('\n\n\n\n\n\n\n\n\n');
 
 // import './binary-gap';
-// import './brackets';
+import './brackets';
 // import './count-div';
 // import './distinct';
 // import './change-calculation';
@@ -23,6 +23,6 @@ console.log('\n\n\n\n\n\n\n\n\n');
 // import './perm-missing-elements';
 // import './reordering-groups';
 // import './tape_equilibrium';
-import './triangle';
+// import './triangle';
 
 console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n');
