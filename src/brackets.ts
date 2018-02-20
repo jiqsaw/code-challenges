@@ -10,42 +10,50 @@ console.log('// BRACKETS //');
 
 function brackets(S: string): number {
 
-    if (S.length === 0) return 1;
-    if (S.length % 2 !== 0) return 0;
+
+
+    // console.log(S.split(''));
 
     // let reg = /\(([^)]+)\)|\{([^}]+)\}|\[([^]]+)\]/g;
     // return reg.test(S) ? Number(S.match(reg).toString() === S) : 0;
 
-    let i = 0;    
-    let sArr = S.split('');
-    let len = sArr.length;
-
-    while (i < sArr.length) {
-        if (sArr[i] === '(') { if ((sArr.lastIndexOf(')') < i) || ((sArr.lastIndexOf(')') - i) - 1 % 2 !== 0)) return 0; }
-        // if (sArr[i] === ')') { if (sArr.lastIndexOf(')') < i) return 0; }
-        if (sArr[i] === '{') { if ((sArr.lastIndexOf('}') < i) || ((sArr.lastIndexOf('}') - i) - 1 % 2 !== 0)) return 0; }
-        // if (sArr[i] === '}') { ((f (sArr.lastIndexOf(')') < i) return 0; } - 1
-        if (sArr[i] === '[') { if ((sArr.lastIndexOf(']') < i) || ((sArr.lastIndexOf(']') - i) - 1 % 2 !== 0)) return 0; }
-        // if (sArr[i] === ']') { if (sArr.lastIndexOf(')') < i) return 0; }
-        i++;
-    }
-    return 1;
+    return Number(cleanS(S, S.length));
 }
 
-function cleanS(S: string): string {
-    // let filtered = S.replace(/()/g, '').replace(/{}/g, '').replace(/[]/g, '')
+function cleanS(S: string, len: number): boolean {
 
-    let f = S.replace(/()/g, '');
-    console.log(f)
-    return '3';
-    // let index1 = filtered.indexOf('()');
-    // let index2 = filtered.indexOf('{}');
-    // let index3 = filtered.indexOf('[]');
+    let regex1 = new RegExp('(', 'g');
+    // let regex2 = new RegExp('{}', 'g');
+    // let regex3 = new RegExp('[]', 'g');
 
-    // if ((index1 !== -1) || (index2 !== -1) || (index3 !== -1)) {
-    //     return cleanS(filtered);
-    // }
-    // return filtered;
+    S = S.replace(regex1, '');
+    // S = S.replace(regex2, '');
+    // S = S.replace(regex3, '');
+
+    console.log('f', S)
+    return false;
+
+// let filtered = S;
+//     // let filtered = S.split('()').join('').split('{}').join('').split('[]').join('');
+
+//     // console.log(filtered);
+
+//     if (filtered.length === 0) return true;
+//     if (filtered.length === 1) return false;
+//     if (filtered.length % 2 !== 0) return false;
+
+//     if (filtered.substr(0, 1) === ')' || filtered.substr(0, 1) === '}' || filtered.substr(0, 1) === ']')
+//         return false;
+//     if (filtered.substr(filtered.length - 1, 1) === '(' || filtered.substr(filtered.length - 1, 1) === '{' || filtered.substr(filtered.length - 1, 1) === '[')
+//         return false;
+//     if (filtered.length === len) {
+//         return false;
+//     } else if (filtered.length > 1) {
+//         console.log('occurrrr')
+//         return cleanS(filtered, filtered.length);
+//     } else {
+//         return true;
+//     }
 }
 
 function bracketsTest(S: string) {
