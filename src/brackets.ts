@@ -4,57 +4,58 @@
     
     Determine whether a given string of parentheses (multiple types) is properly nested.
 
+    Note: Using recrusive method to clear string is a slower method. Got up to 87% max. 
+    However, This solution below is 100% although seems more complicated.
+
 */
 
 console.log('// BRACKETS //');
 
 function brackets(S: string): number {
 
+    let i = 0;
+    let len = S.length;
 
+    if (len === 0) { return 1; }
+    if (len % 2 !== 0) { return 0; }
 
-    // console.log(S.split(''));
+    len = S.length;
 
-    // let reg = /\(([^)]+)\)|\{([^}]+)\}|\[([^]]+)\]/g;
-    // return reg.test(S) ? Number(S.match(reg).toString() === S) : 0;
+    let arrChar = ['(', ')', '{', '}', '[', ']'];
 
-    return Number(cleanS(S, S.length));
+    let arrIndex = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    while (i < len) {
+
+        let ch = S.charAt(i);
+        let charIndex = arrChar.indexOf(ch)
+        let even = Number(i % 2 === 0);
+
+        arrIndex[(charIndex * 2) + even]++;
+
+        console.log(arrIndex)
+
+        if (((arrIndex[2] + arrIndex[3]) > (arrIndex[0] + arrIndex[1])) ||
+            ((arrIndex[6] + arrIndex[7]) > (arrIndex[4] + arrIndex[5])) ||
+            ((arrIndex[10] + arrIndex[11]) > (arrIndex[8] + arrIndex[9]))) {
+            return 0;
+        }
+
+        i++;
+    }
+
+    // console.log(arrIndex);
+
+    return Number(
+        (arrIndex[0] === arrIndex[3]) &&
+        (arrIndex[1] === arrIndex[2]) &&
+        (arrIndex[4] === arrIndex[7]) &&
+        (arrIndex[5] === arrIndex[6]) &&
+        (arrIndex[8] === arrIndex[11]) &&
+        (arrIndex[9] === arrIndex[10])
+    );
 }
 
-function cleanS(S: string, len: number): boolean {
-
-    let regex1 = new RegExp('(', 'g');
-    // let regex2 = new RegExp('{}', 'g');
-    // let regex3 = new RegExp('[]', 'g');
-
-    S = S.replace(regex1, '');
-    // S = S.replace(regex2, '');
-    // S = S.replace(regex3, '');
-
-    console.log('f', S)
-    return false;
-
-// let filtered = S;
-//     // let filtered = S.split('()').join('').split('{}').join('').split('[]').join('');
-
-//     // console.log(filtered);
-
-//     if (filtered.length === 0) return true;
-//     if (filtered.length === 1) return false;
-//     if (filtered.length % 2 !== 0) return false;
-
-//     if (filtered.substr(0, 1) === ')' || filtered.substr(0, 1) === '}' || filtered.substr(0, 1) === ']')
-//         return false;
-//     if (filtered.substr(filtered.length - 1, 1) === '(' || filtered.substr(filtered.length - 1, 1) === '{' || filtered.substr(filtered.length - 1, 1) === '[')
-//         return false;
-//     if (filtered.length === len) {
-//         return false;
-//     } else if (filtered.length > 1) {
-//         console.log('occurrrr')
-//         return cleanS(filtered, filtered.length);
-//     } else {
-//         return true;
-//     }
-}
 
 function bracketsTest(S: string) {
     console.log('\n(', S, ')\n');
@@ -64,18 +65,20 @@ function bracketsTest(S: string) {
 
 
 
-// TEST 2
 bracketsTest('{[()()]}');
-// // 1
+// 1
 
 bracketsTest('([)()]');
-// // 0
+// 0
 
 bracketsTest('');
-// // 1
+// 1
 
 bracketsTest(')(');
 // 0
 
 bracketsTest('({{({}[]{})}}[]{})');
+// 1
+
+bracketsTest('()(()())((()())(()()))');
 // 1
