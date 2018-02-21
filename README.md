@@ -7,22 +7,18 @@ Javascript solutions for Code Challanges and Interview Questions.
 npm start
 ```
 
-Each challange is imported in `index.ts`.
-Enable only one `.ts` import line that should run.
+Each challange is imported in `index.js`.
+Enable only one `.js` import line that should run.
 
 Required global npm packages:
 `nodemon`
-`ts-node`
 
 to download global packages:
 ```bash 
 npm run init
 ```
 
-It is written with Typescript. Once it runs, js files will be generated into `/js` folder.
-
-Js compile version: `ES5` and configured in `tsconfig.json`.
-It may simply be changed to `ES6`.
+JS version: `ES6`.
 
 
 ## websites
