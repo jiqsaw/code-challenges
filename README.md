@@ -10,13 +10,8 @@ npm start
 Each challange is imported in `index.js`.
 Enable only one `.js` import line that should run.
 
-Required global npm packages:
+Recommended global npm packages:
 `nodemon`
-
-to download global packages:
-```bash 
-npm run init
-```
 
 JS version: `ES6`.
 
