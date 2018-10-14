@@ -2,9 +2,9 @@
 
 Javascript solutions for Code Challanges and Interview Questions.
 
-## Run / Build the app
+## Run
 ```bash 
-npm start
+node js/
 ```
 
 Each challange is imported in `index.js`.

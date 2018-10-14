@@ -8,66 +8,34 @@
 
 console.log('STONE WALL');
 
-
-// remove next same items
 function solution(H) {
 
     if (H.length < 1) return 0;
     if (H.length === 1) return 1;
 
     let i = 0;
-    let B = [];
+    let n = 0;
 
-    while (i < H.length) {
+    let count = 0;
+    while (i < H.length - 1) {
 
-        nextIndex = H.indexOf(H[i], i + 1);
+        n = i + 1;
+        while (n < H.length) {
 
-        if (nextIndex !== -1) {
-            
-            B = H.slice(i, nextIndex);
-
-            if (Math.min(...B) === H[i]) {
-                H.splice(nextIndex, 1);
-                i--;
+            if (H[n] < H[i]) {
+                break;
             }
-
-        }        
-
-        i++;
-    }
-
-    return H.length;
-}
-
-
-// count unrequired previous items
-function solution2(H) {
-
-    if (H.length < 1) return 0;
-    if (H.length === 1) return 1;
-
-    let i = 1;
-    let len = H.length;
-    let sameCount = 0;
-
-    let B = [];
-
-    while (i < len) {
-
-        if (H.slice(0, i).lastIndexOf(H[i]) !== -1) {
-            
-            B = H.slice(H.slice(0, i).lastIndexOf(H[i]), i);
-
-            if (Math.min(...B) === H[i]) {
-                sameCount++;
+            if (H[n] === H[i]) {
+                count++;
+                break;
             }
+            n++;
 
         }
-
         i++;
     }
 
-    return H.length - sameCount;
+    return H.length - count;
 }
 
 // test([1, 1, 1]);
@@ -84,7 +52,6 @@ test([8, 8, 5, 7, 9, 8, 7, 4, 8]);
 
 // test([2, 3, 2, 1]);
 // 3
-
 
 
 function test(...params) {
