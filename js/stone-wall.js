@@ -10,17 +10,18 @@ console.log('STONE WALL');
 
 function solution(H) {
 
-    if (H.length < 1) return 0;
-    if (H.length === 1) return 1;
+    // if (H.length < 1) return 0;
+    // if (H.length === 1) return 1;
 
     let i = 0;
     let n = 0;
-
+    let len = H.length;
     let count = 0;
-    while (i < H.length - 1) {
+    
+    while (i < len - 1) {
 
         n = i + 1;
-        while (n < H.length) {
+        while (n < len) {
 
             if (H[n] < H[i]) {
                 break;
