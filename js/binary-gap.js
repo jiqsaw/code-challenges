@@ -12,7 +12,7 @@ function solution(N) {
         
     let b = N.toString(2);
 
-    for (var i = b.length - 1; i > 0; i--) {
+    for (let i = b.length - 1; i > 0; i--) {
 
         let zeros = padZero(i);
         if (b.indexOf(zeros) !== -1) {
@@ -27,7 +27,7 @@ function solution(N) {
 
 function padZero(len) {
     let s = '';
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
         s = s + '0';
     }
     return '1' + s + '1';
