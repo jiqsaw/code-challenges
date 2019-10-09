@@ -17,13 +17,13 @@ console.log('\n\n\n\n\n\n\n');
 // require('./minimum-hits');
 // require('./min-avg-two-slice');
 // require('./missing-integer');
-require('./multiplies-3-5');
+// require('./multiplies-3-5');
 // require ('./odd-occurence-in-array');
 // require ('./passing-cars');
 // require ('./perm-check.js');
 // require ('./perm-missing-elements');
 // require('./reordering-groups');
-// require('./stone-wall');
+require('./stone-wall');
 // require('./tape-equilibrium');
 // require('./triangle');
 
