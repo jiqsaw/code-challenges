@@ -9,11 +9,8 @@ console.log('// TAPE EQUILIBRIUM //');
 
 function solution(A) {
 
-    var retval;
-
     var sumRight = A.reduce(function (pv, cv, idx) { return (idx > 0) ? pv + cv : 0; }, 0);
     var sumLeft = 0;
-    var substractions = [];
     var maxI = A.length - 1;
 
     let min = null;

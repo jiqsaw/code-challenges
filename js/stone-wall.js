@@ -2,6 +2,7 @@
 
     https://app.codility.com/programmers/lessons/7-stacks_and_queues/stone_wall/
 
+    StoneWall
     Cover "Manhattan skyline" using the minimum number of rectangles.
 
 */
@@ -9,37 +10,71 @@
 console.log('STONE WALL');
 
 
+// function solution(H) {
+
+//     let i = 0;
+//     let len = H.length;
+
+//     let stones = [];
+//     let inUse = 0;
+
+//     while (i < len) {
+
+//         let value = H[i];
+
+//         if (stones[value] === 1) {
+//             inUse++;
+//         }
+
+//         // if (value < stones.length - 1) {
+//             stones.splice(value)
+//         // }
+
+//         stones[value] = 1;
+
+//         console.log('inUse', inUse)
+//         console.log('stones:', stones)
+//         console.log('--------------------')
+
+//         i++;
+
+//     }
+
+//     return len - inUse;
+// }
+
 function solution(H) {
+    // write your code in JavaScript (Node.js 4.0.0)
 
-    let i = 0;
-    let len = H.length;
+    var counter = 0;
+    var height = 0;
+    var blocks = [];
+    var i = 0;
 
-    let stones = [];
-    let inUse = 0;
-
-    while (i < len) {
-
-        let value = H[i];
-
-        if (stones[value] === 1) {
-            inUse++;
+    while (i < H.length) {
+        console.log(i);
+        console.log('value: ', H[i])
+        if (H[i] > height) {
+            var newBlock = H[i] - height;
+            blocks.push(newBlock);
+            height += newBlock;
+            counter++;
+            i++;
+        } else if (H[i] < height) {
+            var lastBlock = blocks.pop();
+            height -= lastBlock;
+        } else {
+            i++;
         }
 
-        // if (value < stones.length - 1) {
-            stones.splice(value)
-        // }
 
-        stones[value] = 1;
-
-        console.log('inUse', inUse)
-        console.log('stones:', stones)
+        console.log('blocks:', blocks)
+        console.log('height:', height)
+        console.log('counter:', counter)
         console.log('--------------------')
-
-        i++;
-
     }
 
-    return len - inUse;
+    return counter;
 }
 
 
@@ -83,142 +118,3 @@ function test(...params) {
 
 
 
-
-
-
-
-
-
-
-
-
-// function solution(H) {
-
-//     // if (H.length < 1) return 0;
-//     // if (H.length === 1) return 1;
-
-//     let i = 0;
-//     let n = 0;
-//     let len = H.length;
-//     let count = 0;
-
-//     while (i < len - 1) {
-
-//         console.log(H[i])
-
-//         n = i + 1;
-//         while (n < len) {
-
-//             console.log('n: ', n, H[n])
-
-//             if (H[n] < H[i]) {
-//                 break;
-//             }
-//             if (H[n] === H[i]) {
-//                 count++;
-//                 console.log('count:', count)
-//                 break;
-//             }
-//             n++;
-
-//         }
-//         i++;
-
-//         console.log('------')
-//     }
-
-
-
-//     return H.length - count;
-// }
-
-
-// function solution(H) {
-
-//     let i = 1;
-//     let len = H.length;
-
-//     let walls = [H[0]];
-//     let inUse = 0;
-
-//     while (i < len) {
-
-//         let value = H[i];
-//         let j = 0;
-//         let lw = walls.length;
-//         let w2 = [];
-
-//         while (j < lw) {
-//             if (walls[j] === value) {
-//                 inUse++;
-//             } else if (walls[j] < value) {
-//                 w2.push(walls[j])
-//             }
-//             j++;
-//         }
-//         w2.push(value);
-//         walls = w2;
-
-//         console.log(value)
-//         console.log('inUse', inUse)
-//         console.log('walls:', walls)
-//         console.log('--------------------')
-
-//         i++;
-
-//     }
-
-//     return len - inUse;
-// }
-
-
-
-
-
-
-
-
-
-
-
-// function solution(H) {
-
-//     let i = 1;
-//     let len = H.length;
-
-//     let stones = [H[0]];
-//     let inUse = 0;
-
-//     while (i < len) {
-
-//         let value = H[i];
-
-//         if (stones.indexOf(value) !== -1) {
-//             inUse++;
-//         }
-
-//         // let lw = stones.length;
-//         // let j = 0;
-//         // while (j < lw) {
-//         //     if (stones[j] === value) {
-//         //         inUse++;
-//         //     }
-//         //     j++;
-//         // }
-
-//         stones = [
-//             ...stones.filter(e => e < value),
-//             value
-//         ]
-
-//         console.log(value)
-//         console.log('inUse', inUse)
-//         console.log('stones:', stones)
-//         console.log('--------------------')
-
-//         i++;
-
-//     }
-
-//     return len - inUse;
-// }
