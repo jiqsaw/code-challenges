@@ -12,7 +12,7 @@ function solution(N) {
         
     let b = N.toString(2);
 
-    for (let i = b.length - 1; i > 0; i--) {
+    for (let i = b.length - 2; i > 0; i--) {
 
         let zeros = padZero(i);
         if (b.indexOf(zeros) !== -1) {
