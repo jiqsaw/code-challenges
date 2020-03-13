@@ -7,19 +7,17 @@
 */
 
 function solution(A) {
-
-    var seen = [];
-    var count = 0;
-    var len = A.length;
-    for (var i = 0; i < len; i++) {
-        var item = A[i];
-        if (seen[item] !== 1) {
-            seen[item] = 1;
-            count++
+    let sorted = [], count = 0;
+    
+    sorted = A.sort((a, b) => a - b);
+    
+    for(let i = 0; i < sorted.length; i++) {
+        if (sorted[i] !== sorted[i-1]) {
+            count++;
         }
     }
+    
     return count;
-
 }
 
 
