@@ -15,6 +15,7 @@ function solution(A) {
     let condition = true;
 
     A = uniq(A.filter(i => i > 0)).sort((a, b) => a - b);
+    console.log('A:', A)
 
     if (A[0] !== 1) { return 1; }
 

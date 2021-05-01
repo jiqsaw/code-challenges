@@ -16,6 +16,14 @@ function solution(A, K) {
     var e = A.splice(A.length - K);
     return e.concat(d);
 
+    // K = K % A.length;
+
+    // if (K === 0 || K === A.length) {
+    //     return A;
+    // }
+
+    // const sliceIndex = A.length - K;
+    // return [...A.slice(sliceIndex), ...A.slice(0, sliceIndex)]
 }
 
 
@@ -23,6 +31,8 @@ test([5, -1000], 1);
 // [ -1000, 5 ]
 
 
+test([3, 8, 9, 7, 6], 3);
+// [9, 7, 6, 3, 8]
 
 
 

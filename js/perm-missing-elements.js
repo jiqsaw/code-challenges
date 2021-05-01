@@ -14,10 +14,15 @@ function solution(A) {
     if (len <= 1) return 1;
 
     let max = len + 1;
+    console.log('max:', max)
     let total = A.reduce((x, y) => x + y);
+    console.log('total:', total)
     let missTotal = total - max;
+    console.log('missTotal:', missTotal)
     let actTotal = (len * (len + 1)) / 2;
+    console.log('actTotal:', actTotal)
     let o = actTotal - missTotal;
+    console.log('o:', o)
 
     return o;
 

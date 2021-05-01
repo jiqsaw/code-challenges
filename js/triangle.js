@@ -20,8 +20,6 @@ function solution(A) {
 
         let p = A[i];
 
-        let j = i + 1;
-
         let q = A[i + 1];
         let r = A[i + 2];
 

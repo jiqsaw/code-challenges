@@ -19,10 +19,10 @@ JS version: `ES6`.
 ## websites
 [projecteuler.net](http://projecteuler.net)  
 [hackerrank.com](http://hackerrank.com)  
+[coderbyte.com](https://coderbyte.com)
 [leetcode.com](http://leetcode.com)  
 [codility.com](http://codility.com)  
-[topcoder.com](http://topcoder.com)  
-[coderbyte.com](http://coderbyte.com)  
+[topcoder.com](http://topcoder.com)    
 [codechef.com](http://codechef.com)  
 [hackerearth.com](http://hackerearth.com)  
 [codeeval.com](http://codeeval.com)  
