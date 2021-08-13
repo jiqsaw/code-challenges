@@ -1,7 +1,6 @@
 
 function fn(d) {
-
-
+    
     let total = 0;
 
     for (let g = 10; g <= 20; g++) {

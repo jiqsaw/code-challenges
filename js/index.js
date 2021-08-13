@@ -26,6 +26,7 @@ console.log('\n\n\n\n\n\n\n');
 // require('./max-product-of-three');
 // require('./max-profit');
 // require('./max-slice-sum');
+// require('./merge-sort-two-arrays-into-one');
 // require('./minimum-hits');
 // require('./min-avg-two-slice');
 // require('./min-perimeter-rectangle');
@@ -44,7 +45,7 @@ console.log('\n\n\n\n\n\n\n');
 // require('./triangle');
 
 
-require('./temp');
+// require('./temp');
 
 
 // require('./flip-card');
@@ -54,5 +55,9 @@ require('./temp');
 // require('./q1');
 // require('./q2');
 // require('./q3');
+
+
+// require('./test');
+
 
 console.log('\n\n\n\n\n\n\n\n\n\n\n');

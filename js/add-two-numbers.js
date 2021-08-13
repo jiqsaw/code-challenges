@@ -13,77 +13,45 @@
 
 */
 
-// SOLUTION 1 (by string and carry one)
+function solution(A, B) {
 
-function numberOfCarryOperations(A, B) {
+    let strA = A.toString();
+    let strB = B.toString();
 
-    var a = A.toString()
-    var b = B.toString()
+    strA = strA.padStart(strB.length, '0');
+    strB = strB.padStart(strA.length, '0');
 
-    a = a.padStart(b.length, '0');
-    b = b.padStart(a.length, '0');
+    console.log('strA:', strA)
+    console.log('strB:', strB)
 
-    var result = '';
+    let i = strA.length - 1;
 
-    var i = a.length - 1;
+    let additional = 0;
+
+    let result = '';
 
     while (i >= 0) {
+        let sum = Number(strA[i]) + Number(strB[i]) + additional;
+        if (sum >= 10) {
+            additional = 1;
+            sum = sum - 10;
+        } else {
+            additional = 0;
+        }
 
-        let total =
-            Number(a.charAt(i)) +
-            Number(b.charAt(i)) +
-            Number(result.charAt(0));
-
-        result = String(total).padStart(2, '0') + result.slice(1);
-
+        result = String(sum) + result;
         i--;
     }
 
-    return Number(result);
+    return result;
+
 }
 
+test(20, 145);
 
-// SOLUTION 2 (by numbers)
-
-// function numberOfCarryOperations(A, B) {
-
-//     var a = A.toString()
-//     var b = B.toString()
-
-//     a = a.padStart(b.length, '0');
-//     b = b.padStart(a.length, '0');
-
-//     var i = a.length - 1;
-//     var m = 1;
-//     var total = 0;
-//     while (i >= 0) {
-
-//         total +=
-//             (Number(a.charAt(i)) + Number(b.charAt(i))) * m;
-
-//         i--;
-//         m *= 10;
-//     }
-
-//     return total;
-// }
-
-
-test(65, 55);
-// 120
-
-test(145, 55);
-// 200
-
-test(14, 5);
-// 19
-
-test(1, 1);
-// 2
+test(98397, 37234226);
 
 function test(...params) {
     console.log('\n(', ...params, ')\n');
-    console.log('\n=>', numberOfCarryOperations(...params), '\n\n');
+    console.log('\n=>', solution(...params), '\n\n');
 }
-
-// https://leetcode.com/problems/add-two-numbers-ii/
