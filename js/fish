@@ -1,0 +1,21 @@
+function solution(A, B) {
+    let stack_1 = [], count = 0
+    for (i=0; i<A.length; i++) {
+        let j = stack_1.length - 1
+        if (B[i] === 0) {
+            while (j>=0) {
+                if (stack_1[j] > A[i]) {
+                    break;
+                } else {
+                    stack_1.pop()
+                }
+                j--
+            }
+            if (j<0) count++
+        } else {
+            stack_1.push(A[i])
+        }
+    }
+    
+    return count + stack_1.length
+}
