@@ -1,0 +1,36 @@
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(S, P, Q) {
+    let n = S.length
+    let m = P.length
+    let A = [0], C = [0], G = [0]
+    let tempA = 0, tempC = 0, tempG = 0
+
+    for (let i=0; i<n; i++) {
+        if(S.charAt(i) == 'A') {
+            tempA++
+        } else if(S.charAt(i) == 'C') {
+            tempC++
+        } else if(S.charAt(i) == 'G') {
+            tempG++
+        }
+        A[i + 1] = tempA
+        C[i + 1] = tempC
+        G[i + 1] = tempG
+    }
+
+    let res = []
+    for (let k=0; k<m; k++) {
+        if (A[Q[k] + 1] - A[P[k]] > 0) {
+            res[k] = 1
+        } else if (C[Q[k] + 1] - C[P[k]] > 0) {
+            res[k] = 2
+        } else if (G[Q[k] + 1] - G[P[k]] > 0) {
+            res[k] = 3
+        } else {
+            res[k] = 4
+        }
+    }
+    return res
+}
