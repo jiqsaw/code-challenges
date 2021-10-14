@@ -15,14 +15,18 @@
 console.log('// DECIMAL REPRESENTATION //');
 
 function solution(A) {
+  let sum = 0, overflow = 0, result = 0;
+  
+  for (let i = 0; i < A.length; i ++) {
+    sum = 17 * A[i] + overflow;
+    overflow = parseInt(sum / 10);
+    result += parseInt(sum % 10);
+  }
 
-    let newNumber = 17 * Number(A.reverse().toString().replace(/,/g, ''));
-
-    let total = 0;
-    newNumber.toString().split('').map(e => total += Number(e));
-    return total;
+  result += parseInt(overflow % 10) + parseInt(overflow / 10);
+  
+  return result;
 }
-
 
 test([3, 5, 1]);
 // 9
