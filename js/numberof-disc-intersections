@@ -1,0 +1,31 @@
+function solution(A) {
+    let start = [], end = []
+    let n = A.length
+    for (i=0; i<n; i++) {
+        start[i] = i - A[i]
+        end[i] = i + A[i]
+    }
+    start = start.sort((a, b) => a - b)
+    let count = 0
+    for (i=0; i<n; i++) {
+        count += bSearch(start, end[i])
+        count = count - 1 - i
+    }
+    if (count > 10000000) return -1
+    return count
+}
+
+function bSearch (A, a) {
+    let beg = 0, end = A.length - 1
+    let res = 0
+    while (beg <= end) {
+        let mid = Math.ceil((beg + end) / 2)
+        if (A[mid] > a) {
+            end = mid - 1
+        } else {
+            beg = mid + 1
+            res = mid + 1
+        }
+    }
+    return res
+}
